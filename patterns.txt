@@ -1,0 +1,11 @@
+# Esta linha é um comentário
+# awk regex guide => https://www.gnu.org/software/gawk/manual/html_node/Regexp.html
+
+# Todos os usuários que realizaram um delete que não seja o ops@saturno
+!/ops@saturno/ && /DELETE/
+
+# Todos os usuários que realizaram um delete e não estão no "domínio" @saturno
+!/@saturno/ && /DELETE/
+
+# Todos os usuários que realizaram um delete e não tem a "inicial" ops@
+!/ops@/ && /DELETE/
