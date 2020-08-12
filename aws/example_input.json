@@ -1,0 +1,24 @@
+{
+    "rds_log": [
+        {
+            "PutRequest": {
+                "Item": {
+                    "occurrence": {"S": "No One You Know"},
+                    "pattern": {"S": "Call Me Today"},
+                    "date": {"S": "Somewhat Famous"},
+                    "file": {"S": "Somewhat Famous"}
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "occurrence": {"S": "No One You Know2"},
+                    "pattern": {"S": "Call Me Today2"},
+                    "date": {"S": "Somewhat Famous2"},
+                    "file": {"S": "Somewhat Famous2"}
+                }
+            }
+        }
+    ]   
+}

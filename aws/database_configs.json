@@ -1,0 +1,39 @@
+{
+    "TableName": "rds_log",
+    "KeySchema": [
+      { "AttributeName": "occurrence", "KeyType": "HASH" },
+      { "AttributeName": "pattern", "KeyType": "RANGE" }
+    ],
+    "LocalSecondaryIndexes": [
+        {
+            "IndexName": "IndexDate",
+            "KeySchema": [
+                { "AttributeName": "occurrence", "KeyType": "HASH"},  
+                { "AttributeName": "date", "KeyType": "RANGE" }
+            ],
+            "Projection": {
+                "ProjectionType": "ALL"
+            }
+        },
+        {
+            "IndexName": "IndexFile",
+            "KeySchema": [
+                { "AttributeName": "occurrence", "KeyType": "HASH"},  
+                { "AttributeName": "file", "KeyType": "RANGE" }
+            ],
+            "Projection": {
+                "ProjectionType": "ALL"
+            }
+        }
+    ],
+    "AttributeDefinitions": [
+      { "AttributeName": "occurrence", "AttributeType": "S" },
+      { "AttributeName": "pattern", "AttributeType": "S" },
+      { "AttributeName": "date", "AttributeType": "S" },
+      { "AttributeName": "file", "AttributeType": "S" }
+    ],
+    "ProvisionedThroughput": {
+      "ReadCapacityUnits": 5,
+      "WriteCapacityUnits": 5
+    }
+}
